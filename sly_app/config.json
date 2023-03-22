@@ -1,0 +1,38 @@
+{
+  "name": "RITM interactive segmentation SmartTool",
+  "type": "app",
+  "restart_policy": "on_error",
+  "categories": [
+    "neural network",
+    "images",
+    "videos",
+    "dicom",
+    "interactive segmentation",
+    "serve"
+  ],
+  "description": "State of the art object segmentation model in Labeleing Interface",
+  "need_gpu": true,
+  "docker_image": "supervisely/ritm:1.1.2",
+  "entrypoint": "python -m uvicorn sly_app.src.sly_main:app --host 0.0.0.0 --port 8000",
+  "port": 8000,
+  "modal_template": "supervisely/src/modal.html",
+  "modal_template_state": {
+    "modelMode": "pretrained",
+    "weightsPath": null,
+    "device": "cuda",
+    "model": "4",
+    "brs_mode": "0",
+    "net_clicks_limit": 8,
+    "net_clicks_unlimited": true,
+    "lbfgs_max_iters": 20,
+    "prob_thresh": 0.5
+  },
+  "task_location": "application_sessions",
+  "icon": "https://i.imgur.com/Mm2Auxx.png",
+  "icon_background": "#FFFFFF",
+  "headless": true,
+  "instance_version": "6.5.1",
+  "session_tags": ["sly_smart_annotation"],
+  "poster": "https://i.imgur.com/8RaxwK2.png",
+  "community_agent": false
+}
