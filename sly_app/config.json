@@ -1,5 +1,5 @@
 {
-  "name": "RITM interactive segmentation SmartTool",
+  "name": "RITM v2 app",
   "type": "app",
   "restart_policy": "on_error",
   "categories": [
